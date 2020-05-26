@@ -8,13 +8,16 @@
 
 using namespace std;
 
+#define SORTED    "\nThe sorted array is:"
+#define UNSORTED  "\nThe unsorted array is:"
+
 void runQuicksort(vector<int> &arr);
 
 
 void loadArray(vector<int> &arr)
 {
   arr = {};
-  arr = {45,32,52,266,18,92,43,11,88,23,150,125,76};
+  arr = {45,32,52,266,18,92,256,76,23,54,89};
 }
 
 void main()
@@ -22,9 +25,10 @@ void main()
   vector<int> arr;
 
   loadArray(arr);
-  print("\nThe unsorted array is:",arr);
+  print(SORTED,arr);
+
   runQuicksort(arr);
-  print("\nThe sorted array is:", arr);
+  print(UNSORTED, arr);
 
   getchar();
 }

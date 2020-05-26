@@ -12,13 +12,14 @@ typedef vector<int> vecInt;
 
 int partition(vecInt &arr, int low, int high)
 {
-  int pivot = arr[high];
-  int i = low, j = high-1;
+  int pivot       = arr[high];
+  int i           = low;
+  int j           = high-1;
 
   for (;;)
   {
-    while(arr[i] < pivot) { i++; }
-    while(arr[j] > pivot) { j--; }
+    while(i < high && arr[i] < pivot) { i++; }
+    while(j >= low && arr[j] > pivot) { j--; }
   
     if (i > j)
       break;
@@ -37,8 +38,8 @@ void quicksortHelper(vector<int> &arr, int low, int high)
   {
     int mid = partition(arr,low,high);
 
-    quicksortHelper(arr,low,mid-1);
-    quicksortHelper(arr,mid+1,high);
+    quicksortHelper(arr,  low,    mid-1);
+    quicksortHelper(arr,  mid+1,  high);
   }
 }
 
