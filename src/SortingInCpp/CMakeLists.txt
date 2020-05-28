@@ -9,7 +9,7 @@ project(SortingInCpp)
 set(SOURCE
 	main.cpp
 	Quicksort.cpp
-	Utility.cpp
+	Utility.h
 	)
 	
 	
