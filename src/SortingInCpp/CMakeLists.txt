@@ -10,6 +10,7 @@ set(SOURCE
 	main.cpp
 	Quicksort.cpp
 	BubbleSort.cpp
+	Mergesort.cpp
 	)
 	
 set(HEADERS

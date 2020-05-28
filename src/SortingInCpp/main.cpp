@@ -14,6 +14,7 @@ using namespace std;
 
 void runQuicksort   (vector<int> &arr);
 void runBubblesort  (vector<int> &arr);
+void runMergesort   (vector<int> &arr);
 
 void loadArray(vector<int> &arr)
 {
@@ -39,10 +40,10 @@ void main()
 
   print("\n\nUsing Quicksort");
   print(SORTED, arr);
+  print("Quicksort Duration: ");
   printDuration();
 
   loadArray(arr);
-  print(UNSORTED, arr);
 
   startClock();
   runBubblesort(arr);
@@ -50,7 +51,12 @@ void main()
 
   print("\n\nUsing Bubblesort");
   print(SORTED, arr);
+  print("Bubblesort Duration: ");
   printDuration();
+
+  loadArray(arr);
+  runMergesort(arr);
+  print(SORTED, arr);
   
   getchar();
 }

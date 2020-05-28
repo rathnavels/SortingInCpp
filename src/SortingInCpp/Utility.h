@@ -60,6 +60,6 @@ void printDuration()
 {
   duration = finish - start;  
 
-  print("\n", duration.count() * 1000);
+  print(duration.count() * 1000);
   print(" milliseconds\n");
 }
