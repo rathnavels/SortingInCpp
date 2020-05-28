@@ -6,11 +6,11 @@
 #include <iostream>
 #include <vector>
 
+#pragma once
+
 using namespace std;
 
-typedef vector<int> vecInt;
-
-int partition(vecInt &arr, int low, int high)
+int partition(vector<int> &arr, int low, int high)
 {
   int pivot       = arr[high];
   int i           = low;

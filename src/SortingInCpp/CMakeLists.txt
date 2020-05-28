@@ -9,8 +9,12 @@ project(SortingInCpp)
 set(SOURCE
 	main.cpp
 	Quicksort.cpp
+	BubbleSort.cpp
+	)
+	
+set(HEADERS
 	Utility.h
 	)
 	
 	
-add_executable(${PROJECT_NAME} ${SOURCE})
+add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCE})

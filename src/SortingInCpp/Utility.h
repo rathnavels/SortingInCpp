@@ -31,7 +31,7 @@ void print(T &str, vector<int> &arr)
   for(int a : arr)
     cout << a << "  ";
 
-  LINE_RETURN
+  cout << endl;
 }
 
 template<typename T>
