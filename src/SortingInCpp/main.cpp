@@ -20,6 +20,7 @@ void loadArray(vector<int> &arr)
 {
   arr = {};
   arr = {45,32,52,266,18,92,256,76,23,54,89,182,90,321,43,547,209,121,34,522,450};
+  //arr = { 45,32,266,52};
 }
 
 void reverseArray(vector<int> &arr)
@@ -55,8 +56,15 @@ void main()
   printDuration();
 
   loadArray(arr);
+
+  startClock();
   runMergesort(arr);
+  endClock();
+
+  print("\n\nUsing Mergesort");
   print(SORTED, arr);
+  print("Mergesort Duration: ");
+  printDuration();
   
   getchar();
 }

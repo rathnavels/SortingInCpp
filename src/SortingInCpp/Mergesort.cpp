@@ -8,56 +8,56 @@
 
 using namespace std;
 
-vector<int> merge(vector<int> l, vector<int> r)
+void merge(vector<int> l, vector<int> r, vector<int> &result)
 {
-  vector<int> merged;
 
   int iL = 0, jR = 0;
+  int i = 0;
   int minSz = min(l.size(),r.size());
 
-  while (minSz--)
+  while (iL < l.size() && jR < r.size())
   {
     if(l[iL] < r[jR])
     { 
-      merged.push_back(l[iL]);
+      result[i++] = (l[iL]);
       iL++;
     }
     else
     {
-      merged.push_back(r[jR]);
+      result[i++] = (r[jR]);
       jR++;
     }
   }
 
-  if (iL < l.size())
+  while (iL < l.size())
   {
-    merged.push_back(l[iL++]);
+    result[i++] = (l[iL++]);
   }
 
-  if (jR < r.size())
+  while (jR < r.size())
   {
-    merged.push_back(r[jR++]);
+    result[i++] = (r[jR++]);
   }
 
-  return merged;
 }
 
-vector<int> helper(vector<int> arr, int start, int end)
+void helper(vector<int> &arr)
 {
-  if(start >= end)
-    return {arr.begin(),arr.begin()+end};
+  if(arr.size() <= 1)
+    return;
 
-  int mid = (start + end)/2;
+  int mid = (arr.size())/2;
+
+  vector<int> leftArray = {arr.begin(), arr.begin() + mid};
+  vector<int> rightArray = {arr.begin() + mid, arr.end()};
   
-  auto leftArray = helper(arr,start,mid);
-  auto rightArray = helper(arr,mid+1,end);
+  helper(leftArray);
+  helper(rightArray);
   
-  return merge(leftArray,rightArray);
+  merge(leftArray,rightArray, arr);
 }
 
 void runMergesort(vector<int> &arr)
 {
-    vector<int> sorted = helper(arr,0,arr.size()-1);
-    arr = {};
-    arr = sorted;
+    helper(arr);
 }
