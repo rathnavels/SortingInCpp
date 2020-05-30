@@ -11,6 +11,7 @@ set(SOURCE
 	Quicksort.cpp
 	BubbleSort.cpp
 	Mergesort.cpp
+	InsertionSort.cpp
 	)
 	
 set(HEADERS

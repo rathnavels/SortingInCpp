@@ -12,15 +12,16 @@ using namespace std;
 #define SORTED    "\nThe sorted array is:"
 #define UNSORTED  "\nThe unsorted array is:"
 
-void runQuicksort   (vector<int> &arr);
-void runBubblesort  (vector<int> &arr);
-void runMergesort   (vector<int> &arr);
+void runQuicksort                 (vector<int> &arr);
+void runBubblesort                (vector<int> &arr);
+void runMergesort                 (vector<int> &arr);
+void runInsertionsort             (vector<int> &arr);
+void runInsertionsortRecursion    (vector<int> &arr);
 
 void loadArray(vector<int> &arr)
 {
   arr = {};
   arr = {45,32,52,266,18,92,256,76,23,54,89,182,90,321,43,547,209,121,34,522,450};
-  //arr = { 45,32,266,52};
 }
 
 void reverseArray(vector<int> &arr)
@@ -64,6 +65,17 @@ void main()
   print("\n\nUsing Mergesort");
   print(SORTED, arr);
   print("Mergesort Duration: ");
+  printDuration();
+
+  loadArray(arr);
+
+  startClock();
+  runInsertionsortRecursion(arr);
+  endClock();
+
+  print("\n\nUsing Insertionsort");
+  print(SORTED, arr);
+  print("Mergesort Insertionsort: ");
   printDuration();
   
   getchar();
