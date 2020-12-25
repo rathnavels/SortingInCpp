@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-
+#include <algorithm>
 #include "Utility.h"
 
 #pragma once
@@ -29,7 +29,7 @@ void reverseArray(vector<int> &arr)
   reverse(arr.begin(),arr.end());
 }
 
-void main()
+int main()
 {
   vector<int> arr;
 
@@ -75,8 +75,9 @@ void main()
 
   print("\n\nUsing Insertionsort");
   print(SORTED, arr);
-  print("Mergesort Insertionsort: ");
+  print("Mergesort Duration: ");
   printDuration();
-  
+
+  return 0;
   getchar();
 }
